@@ -19,10 +19,18 @@ public class DataTable {
             }
             ;
         }
-
         //Nie ma w liscie więc dodajemy nowy
         charAndCount.add(new CharAndCount(Character.toString(a)));
     }
+
+    public void addTextToToDataTable(String txt){
+
+        //Iteracja po calym tekscie
+        for(char ch:txt.toCharArray()){
+            addCharacter(ch);
+        }
+    }
+
 
     /**
      * Wypisanie wszystkich wartości z tablicy

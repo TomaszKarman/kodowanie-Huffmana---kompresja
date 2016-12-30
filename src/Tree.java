@@ -8,7 +8,7 @@ public class Tree {
     ArrayList<CharAndCount> tempData=new ArrayList<>();
     ArrayList<Node> nodes = new ArrayList<>();
 
-    public Node budujDrzewo(ArrayList<CharAndCount> CandC) {
+    public Node buildTree(ArrayList<CharAndCount> CandC) {
 
         for (CharAndCount aa : CandC) {
             tempData.add(new CharAndCount(aa.getName(), aa.getCounter()));
