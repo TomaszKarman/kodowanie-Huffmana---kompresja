@@ -23,7 +23,7 @@ public class DataTable {
         charAndCount.add(new CharAndCount(Character.toString(a)));
     }
 
-    public void addTextToToDataTable(String txt){
+    public void addTextToDataTable(String txt){
 
         //Iteracja po calym tekscie
         for(char ch:txt.toCharArray()){

@@ -8,11 +8,19 @@ public class FileTextWriter {
 
     public static void saveTextToFile(String pathToFile, String text) {
 
+        saveTextToFile(pathToFile,text,false);
+
+    }
+
+
+
+    public static void saveTextToFile(String pathToFile, String text, boolean yesOrNo) {
+
 
         try {
             //Otwarcie pliku
             File textFile = new File(pathToFile);
-            FileWriter fw = new FileWriter(textFile, false);
+            FileWriter fw = new FileWriter(textFile, yesOrNo);
             BufferedWriter printWriter = new BufferedWriter(fw);
 
 
@@ -39,4 +47,16 @@ public class FileTextWriter {
             e.printStackTrace();
         }
     }
+
+    public static void writeBytesToFile(String pathToFile, byte [] tableOfBytes, boolean yesOrNo) {
+
+        try {
+            FileOutputStream stream = new FileOutputStream(pathToFile, yesOrNo);
+            stream.write(tableOfBytes);
+            stream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

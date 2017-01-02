@@ -46,21 +46,72 @@ public class ReadText {
             return fullText;
         } catch (Exception e) {
             e.printStackTrace();
-        } return null;
+        }
+        return null;
+    }
+
+    //Chcemy czytac plik od konkretnej linijki
+    public static String getVarsFromFile(String pathToFile, int numberOfStartLine, int numberOfEndLine) {
+
+        String txtLine;
+        String fullText = "";
+        BufferedReader bf = null;
+
+        //boolean secondRound = false;
+        try {
+            bf = openBufferedReader(pathToFile);
+            for (int i = 0; i < numberOfEndLine; i++) {
+                // if (i == numberOfStartLine){
+                //Getting each line in config file
+                txtLine = bf.readLine();
+                if (i >= numberOfStartLine) {
+                    System.err.println(txtLine);
+//                    if (txtLine ) {
+//                        txtLine=Character.toString('\n');
+//                    }
+                    fullText += txtLine;
+                }
+
+                //secondRound = true;
+            }
+            bf.close();
+            return fullText;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
     // funkcja wyciagajaca z pliku wartosci bitow
-    public static ArrayList<Integer> getBytesFromFile (String pathToFile){
-        try{
+    public static ArrayList<Integer> getBytesFromFile(String pathToFile) {
+        try {
             ArrayList<Integer> dataInt = new ArrayList<>();
             byte[] data = Files.readAllBytes(Paths.get(pathToFile));
-            for(Byte by : data){
+            //System.out.println("bity");
+            for (Byte by : data) {
+               // System.out.println(Byte.toUnsignedInt(by));
                 dataInt.add(Byte.toUnsignedInt(by));
-                System.err.println(Byte.toUnsignedInt(by));
+            }
+           // System.out.println("po bity");
+            return dataInt;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // TODO: 2016-12-31 Zrobic funkcje czytajaca bity od konkretnej lini (chyba zawsze 4 linia) 
+    public static ArrayList<Integer> getBytesFromFile(String pathToFile, int lineToStart) {
+        try {
+            ArrayList<Integer> dataInt = new ArrayList<>();
+            byte[] data = Files.readAllBytes(Paths.get(pathToFile));
+            for (Byte by : data) {
+                dataInt.add(Byte.toUnsignedInt(by));
+                //System.err.println(Byte.toUnsignedInt(by));
             }
             return dataInt;
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
