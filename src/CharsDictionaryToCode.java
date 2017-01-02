@@ -46,7 +46,7 @@ public class CharsDictionaryToCode {
     public Character getCharByCode(String code) {
         for (CharAndCode cc : charAndCodes) {
             if (cc.getCode().equals(code)) {
-                System.out.println("zgadza sie");
+                //System.out.println("zgadza sie");
                 return cc.getCharacter();
             }
         }
@@ -61,7 +61,7 @@ public class CharsDictionaryToCode {
     }
 
     public String convertDictionaryToString() {
-        showDictionary();
+        //showDictionary();
         String returnedTxt = "";
 
         for (CharAndCode cc : charAndCodes) {
@@ -102,7 +102,7 @@ public class CharsDictionaryToCode {
                 code = code + dictionaryText.charAt(i);
                 i++;
             }
-            System.out.println("char : "+chatToAdd + " code: " + code);
+            //System.out.println("char : "+chatToAdd + " code: " + code);
             addCharAndCode(chatToAdd, code);
         }
     }

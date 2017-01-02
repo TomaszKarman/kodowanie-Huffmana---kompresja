@@ -65,7 +65,7 @@ public class ReadText {
                 //Getting each line in config file
                 txtLine = bf.readLine();
                 if (i >= numberOfStartLine) {
-                    System.err.println(txtLine);
+//                    System.err.println(txtLine);
 //                    if (txtLine ) {
 //                        txtLine=Character.toString('\n');
 //                    }

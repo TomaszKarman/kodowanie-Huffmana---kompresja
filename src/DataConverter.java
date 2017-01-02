@@ -80,12 +80,12 @@ public class DataConverter {
 
         boolean isEnded = false;
         String txtFull = "";
-        System.out.println("length");
-        System.out.println(lenghtToConvert);
-        System.out.println(tmpString);
+//        System.out.println("length");
+//        System.out.println(lenghtToConvert);
+//        System.out.println(tmpString);
         for (int i = 0; i < lenghtToConvert; ) {
             while (Main.CHARS_DICTIONARY.getCharByCode(tmpString) == null) {
-                System.out.println(tmpString);
+//                System.out.println(tmpString);
                 i++;
                 try {
                     tmpString = tmpString + inputString.charAt(i);
